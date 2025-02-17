@@ -14,6 +14,10 @@ const PORT = parseInt(backendPort || envPort, 10);
 
 const app = express();
 
+app.get("/", (req, res) => {
+  res.send("Server is running!");
+});
+
 // Set up Shopify authentication and webhook handling
 app.get(shopify.config.auth.path, shopify.auth.begin());
 app.get(
@@ -47,4 +51,8 @@ app.use("/*", shopify.ensureInstalledOnShop(), async (_req, res) => {
   res.status(200).set("Content-Type", "text/html").send(transformedHtml);
 });
 
-app.listen(PORT);
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
+}).on("error", (err) => {
+  console.error("Error starting server:", err);
+});

@@ -49,3 +49,6 @@ target = "purchase.checkout.block.render"
 # type = "single_line_text_field"
 # name = "Banner title"
 # description = "Enter a title for the banner"
+
+[capabilities]
+network_access = true

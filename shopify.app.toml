@@ -1,0 +1,29 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "d19bd88ccabd1629e45829ecdbe0d26b"
+application_url = "https://developers-athletics-data-quite.trycloudflare.com"
+embedded = true
+name = "boa-home-task-SS"
+handle = "boa-home-task-ss-1"
+
+[build]
+include_config_on_deploy = true
+dev_store_url = "home-assignment-265.myshopify.com"
+automatically_update_urls_on_dev = true
+
+[webhooks]
+api_version = "2025-01"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products,write_orders,read_customers"
+
+[auth]
+redirect_urls = [
+  "https://developers-athletics-data-quite.trycloudflare.com/auth/callback",
+  "https://developers-athletics-data-quite.trycloudflare.com/auth/shopify/callback",
+  "https://developers-athletics-data-quite.trycloudflare.com/api/auth/callback"
+]
+
+[pos]
+embedded = false
